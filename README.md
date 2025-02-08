@@ -1,5 +1,25 @@
 ESP32 WebSocket LED Controller
 
+flow to run this code 
+
+step 1) Build the Project:     
+         a) Run idf.py build to build the project.   
+         b)For a new project, 
+         c)Use idf.py create-project project1.
+step 2) idf.py menuconfig (this should be in code file directory)
+        a)GUI will open 
+        b)Navigate to EXAMPLE CONNECTION CONFIGURATION and set the WiFi SSID (WiFi name) and WiFi Password (Ensure you use the correct WiFi credentials,            as they are case-sensitive).
+step 3)idf.py set-target esp32s3/esp32
+step 4) idf.py flash
+step 5) idf.py monitor
+
+  a)In the output, you will receive an IPv4 address (e.g., XXX.XXX.XXX.XXX).
+  b)Copy and paste this IP address into your browser’s URL bar and press Enter.
+  c)In the same URL, append /ws at the end (e.g., XXX.XXX.XXX.XXX/ws) and press Enter.
+  d)If the connection is successful, you should see confirmation. Copy XXX.XXX.XXX.XXX/ws and paste it into Postman WebSocket or a Simple WebSocket      Client extension.
+step 6) Now you are ready to go          
+
+
 This project implements a WebSocket Echo Server on an ESP32, allowing users to control an LED remotely via WebSocket messages. The ESP32 connects to a network and listens for WebSocket messages to toggle the LED on or off.
 
 ## Features
@@ -14,6 +34,8 @@ This project implements a WebSocket Echo Server on an ESP32, allowing users to c
 - ESP-IDF installed and configured
 - A WebSocket client (e.g., a web app or tool like **WebSocket King**, **Postman**, or **Python WebSocket Client**)
 - Wi-Fi connection
+
+
 
 ## Setup & Compilation
 
